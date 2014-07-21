@@ -3,5 +3,8 @@ default[:singularity] = {
     :db_name => "singularity",
     :username => "singularity",
     :password => "9thlevel"
+  },
+  :mesos => {
+  	:switch_user => true
   }
 }
