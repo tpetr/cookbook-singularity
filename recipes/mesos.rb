@@ -1,6 +1,7 @@
 private_ip = node[:network][:interfaces][:eth1][:addresses].detect{|k,v| v[:family] == "inet" }.first
 hostname = node[:node][:name]
-switch_user = node[:mesos][:switch_user]
+switch_user = node[:singularity][:mesos][:switch_user]
+mesos_version = node[:singularity][:mesos][:version]
 
 directory '/etc/mesos-master' do
   owner 'root'
@@ -38,5 +39,7 @@ file '/etc/meos-slave/hostname' do
   content hostname
 end
 
-include_recipe "mesos::master"
-include_recipe "mesos::slave"
+apt_package "mesos" do
+  action :install
+  version mesos_version
+end

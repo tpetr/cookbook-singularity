@@ -5,6 +5,7 @@ default[:singularity] = {
     :password => "9thlevel"
   },
   :mesos => {
-  	:switch_user => true
+    :switch_user => true,
+    :version => "0.19.1"
   }
 }

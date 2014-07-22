@@ -8,5 +8,4 @@ supports         'ubuntu'
 
 depends 'apt'
 depends 'mysql'
-depends 'mesos'
 depends 'database'
