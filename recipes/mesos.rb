@@ -39,6 +39,12 @@ file '/etc/meos-slave/hostname' do
   content hostname
 end
 
+apt_repository "mesosphere" do
+  uri "http://repos.mesosphere.io/#{node['lsb']['distro']}"
+  distribution node['lsb']['codename']
+  components ["main"]
+end
+
 apt_package "mesos" do
   action :install
   version mesos_version
