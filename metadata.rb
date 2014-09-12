@@ -7,6 +7,6 @@ version          '0.2.2'
 supports         'ubuntu'
 
 depends 'apt'
-depends 'mysql' '5.5.2'
+depends 'mysql', '5.5.2'
 depends 'database'
 depends 'hostsfile'
